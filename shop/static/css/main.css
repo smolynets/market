@@ -1,0 +1,105 @@
+.celing{
+	background-color: #98FB98;
+}
+
+.registration{
+	margin-top: 10px;
+	margin-left: 10%;
+}
+
+
+#lang-selector{
+	margin-top: 5px;
+	margin-left: 5%;
+}
+
+
+.form-search{
+	margin-top: 5px;
+	margin-left: 7%;
+}
+
+.cart_indicator{
+	margin-top: 10px;
+}
+
+#title{
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.sub-header{
+	background-color: #F4A460;
+}
+
+.main_menu{
+	margin-left: 20px;
+	margin-left: 5%;
+}
+
+
+html {
+    min-height: 100%;
+    position: relative;
+}
+body {
+    margin-bottom: 0px;
+    background-color: #FAF0E6;
+}
+footer {
+    width: 95%;
+    height: 30px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+}
+
+
+
+.thumbnail {
+  display: block;
+  padding: 4px;
+  margin-bottom: 20px;
+  line-height: 1.42857143;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  -webkit-transition: border .2s ease-in-out;
+       -o-transition: border .2s ease-in-out;
+          transition: border .2s ease-in-out;
+}
+
+
+.lot {
+	height: 450px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	margin-left: 50px;
+
+}
+
+.title_lot{
+	margin-bottom: 20px;
+	margin-top: 30px;
+	text-align: center;
+        height: 20px;
+}
+
+#price_buy{
+	margin-top: 20px;
+}
+
+.to_basket{
+	margin-top: 35px;
+}
+
+#reade_more{
+	margin-top: 20px;
+}
+
+
+.btn1{
+	margin-left: 5%;
+	margin-top: 2%;
+}
