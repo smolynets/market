@@ -12,9 +12,6 @@ class Flower(models.Model):
 	title = models.CharField(
       max_length=256,
       blank=False)
-	lat_title = models.CharField(
-      max_length=256,
-      blank=False)
 	price = models.CharField(
       max_length=256,
       blank=False)
