@@ -2,11 +2,14 @@
 from __future__ import unicode_literals
 
 from django.shortcuts import render
+from .models import Flower
 
 
 
 
 ###########################################################################
 def main_page(request):
-  return render(request, 'shop/main.html', {})
+	flowers = Flower.objects.all()
+	return render(request, 'shop/main.html', {'flowers': flowers})
+  
 

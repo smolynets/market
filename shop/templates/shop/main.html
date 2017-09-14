@@ -6,20 +6,22 @@
     {% block content %}
     <div class='row col-xs-10 col-xs-offset-1 content'>
 
-        <div class="col-xs-3 lot">
-            <div class="thumbnail">
-            <img src="images/ger.jpeg" alt=""/>
-            <div class="title_lot"><h4>gerbera</h4></div>
-            <div class="caption">
-            <div id='price_buy'>ціна 45 грн</div>
-            <div>
-            <a href='' class="btn btn-primary to_basket">в кошик</a>
+        {% for fl in flowers %}
+             <div class="col-xs-3 lot">
+                <div class="thumbnail">
+                    <img src="{{ fl.photo_main.url }}" alt="">
+                    <div class="title_lot"><h4>{{ fl.title }}</h4></div>
+                    <div class="caption">
+                    <div id='price_buy'>ціна {{ fl.price }} грн</div>
+                    <div>
+                      <a href='' class="btn btn-primary to_basket">
+                        в кошик</a></div>
+                    <div id='reade_more'><a href="">Читати 
+                        більше...</a></div>
+                </div>
             </div>
-            <div id='reade_more'><a href="">Читати більше...</a></div>
-            </div>
-            </div>
-        </div>
-
+        {% endfor %}
+    </div>
 
 
 
