@@ -3,7 +3,17 @@
 
 
 
-    {% block content %}
+{% block content %}
+    <div class="row col-xs-2 col-xs-offset-5 price_sorting">
+       {% with order_by=request.GET.order_by reverse=request.GET.reverse %}
+           <a href="{% url "main" %}?order_by=price{% if order_by == 'price' and reverse != '1' %}&amp;reverse=1{% endif %}">
+            Сортувати по ціні
+           {% if order_by == 'price' and reverse != '1' %}&uarr;
+           {% elif order_by == 'price' and reverse == '1' %}&darr;
+           {% endif %}
+           </a>
+       {% endwith %}
+    </div>
 
     <div class='row col-xs-10 col-xs-offset-1 content'>
 
@@ -29,7 +39,7 @@
     <div class='row col-xs-10 col-xs-offset-1'>
     <nav>
       <ul class="pagination">
-        <li><a href="#">&laquo;</a></li>
+        <li><a href="{% url "main" %}?page=1&amp;order_by={{ order_by }}&amp;reverse={{ reverse }}">&laquo;</a></li>
 
        {% for p in flowers.paginator.page_range %}
         <li {% if flowers.number == p %}class="active"{% endif %}>
@@ -37,7 +47,7 @@
         </li>
         {% endfor %}
 
-        <li><a href="#">&raquo;</a></li>
+        <li><a href="{% url "main" %}?page={{ flowers.paginator.num_pages }}&amp;order_by={{ order_by }}&amp;reverse={{ reverse }}">&raquo;</a></li>
       </ul>
     </nav>
     </div>
