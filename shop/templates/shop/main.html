@@ -25,6 +25,7 @@
     </div>
 
 
+    {% if flowers.has_other_pages %}
     <div class='row col-xs-10 col-xs-offset-1'>
     <nav>
       <ul class="pagination">
@@ -40,6 +41,7 @@
       </ul>
     </nav>
     </div>
+    {% endif %}
 
   {% endblock content %}
 
