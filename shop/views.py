@@ -145,11 +145,11 @@ def flower_edit(request, pk):
                errors['description'] = u"Опис є обов'язковим"
             else:
                data.description = description
+
             photo_main = request.FILES.get('photo_main')
-            if not photo_main:
-                errors['photo_main'] = u"Одне фото є обов'язковим"
-            else:
-                data.photo_main = photo_main 
+            if photo_main:
+                data.photo_main = photo_main  
+                  
             photo_big = request.FILES.get('photo_big')
             if photo_big:
                data.photo_big = photo_big 
