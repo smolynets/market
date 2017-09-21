@@ -72,9 +72,9 @@
 
       <div class="col-xs-1 cart_indicator">
       {% if cart|length > 0 %}
-          <img src={% static "img/cart.png" %}/> {{ cart|length }}
+          <a href='{% url 'basket' %}'><img src={% static "img/cart.png" %}/></a> {{ cart|length }}
       {% else %}
-          <img src={% static "img/cart-c.png" %}/>
+          <a><img src={% static "img/cart-c.png" %}/></a>
       {% endif %}
       </div>
 
