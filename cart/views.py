@@ -101,3 +101,19 @@ def OrderCreate(request):
 
 
 #####################################################################
+
+
+
+
+
+
+
+
+def orders(request):
+  orders = Order.objects.all()
+  return render(request, 'shop/orders.html', {'orders': orders})
+
+
+
+
+#########################################################################
