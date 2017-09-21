@@ -70,7 +70,11 @@
       </div>
 
       <div class="col-xs-1 cart_indicator">
-        <img src={% static "img/cart.png" %}/> 1
+      {% if cart|length > 0 %}
+          <img src={% static "img/cart.png" %}/> {{ cart|length }}
+      {% else %}
+          <img src={% static "img/cart-c.png" %}/>
+      {% endif %}
       </div>
 
    </div>

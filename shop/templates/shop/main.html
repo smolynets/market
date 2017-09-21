@@ -11,7 +11,6 @@
           </div>
     {% endif %}
 
-
     <div class="row col-xs-2 col-xs-offset-5 price_sorting">
        {% with order_by=request.GET.order_by reverse=request.GET.reverse %}
            <a href="{% url "main" %}?order_by=price{% if order_by == 'price' and reverse != '1' %}&amp;reverse=1{% endif %}">
@@ -35,8 +34,8 @@
                     <div class="caption"></div>
                     <div id='price_buy'>ціна {{ fl.price }} грн</div>
                     <div>
-                      <a href='' class="btn btn-primary to_basket">
-                        в кошик</a></div>
+                      <a href='{% url 'CartAdd' fl.id %}' class="btn btn-primary to_basket">в кошик</a>
+                      </div>
                     <div id='reade_more'><a href="{% url "one_flower" fl.id %}">Читати 
                         більше...</a></div>
                 </div>

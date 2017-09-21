@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Flower
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .utils import is_digit
@@ -190,3 +190,6 @@ class FlowerDelete(DeleteView):
       return super(FlowerDelete, self).post(request, *args, **kwargs)
   def dispatch(self, *args, **kwargs):
         return super(FlowerDelete, self).dispatch(*args, **kwargs)
+
+
+#################################################################
