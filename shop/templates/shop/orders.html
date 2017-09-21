@@ -32,10 +32,10 @@
 {% for order in orders %}
  <tr>
 
-  <td><a href=''>{{ forloop.counter }}</td>
-  <td><a href=''>{{ order.name }}</td>
-  <td><a href=''>{{ order.number }}</td>
-  <td><a href=''>{{ order.total_cost }}</td>
+  <td><a href='{% url 'one_order' order.id %}'>{{ forloop.counter }}</td>
+  <td><a href='{% url 'one_order' order.id %}'>{{ order.name }}</td>
+  <td><a href='{% url 'one_order' order.id %}'>{{ order.number }}</td>
+  <td><a href='{% url 'one_order' order.id %}'>{{ order.total_cost }}</td>
 
  </tr>
 {% endfor %}

@@ -16,6 +16,7 @@ urlpatterns = [
     url(r'^remove/(?P<flower_id>\d+)/$', views.CartRemove, name='CartRemove'),
     url(r'^oformlenya_zamovlenya/', views.OrderCreate, name='OrderCreate'),
     url(r'^samovlenya', views.orders, name='orders'),
+    url(r'^order/(?P<pk>\d+)/one/', views.one_order, name='one_order'),
     
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
