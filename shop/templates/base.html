@@ -65,7 +65,7 @@
         <li role='presentation' {% if request.path == '/' %}class="active"{% endif %}><a href='{% url 'main' %}'>Головна</a></li>
         <li role='presentation'><a href=''>Про мене</a></li>
         <li role='presentation'><a href=''>Контакти</a></li>
-        <li role='presentation'><a href=''>Кошик</a></li>            
+        <li role='presentation' {% if '/basket' in request.path %}class="active"{% endif %}><a href='{% url 'basket' %}'>Кошик</a></li>           
        </ul>
       </div>
 
