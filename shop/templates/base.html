@@ -29,9 +29,9 @@
    </div>
 
    <div class='col-xs-3 registration'>
-     <a href=''>Ввійти</a>
+     <a href='{% url 'users:auth_login' %}'>Ввійти</a>
        |
-     <a href=''>Зареєструватися</a>
+     <a href='{% url "users:registration_register" %}'>Зареєструватися</a>
    </div>
 
     <div class='col-xs-3 form-search'>
@@ -66,7 +66,8 @@
         <li role='presentation'><a href=''>Про мене</a></li>
         <li role='presentation'><a href=''>Контакти</a></li>
         <li role='presentation' {% if '/basket' in request.path %}class="active"{% endif %}><a href='{% url 'basket' %}'>Кошик</a></li> 
-        <li role='presentation' {% if '/orders' in request.path %}class="active"{% endif %}><a href='{% url 'orders' %}'>Замовлення</a></li>          
+        <li role='presentation' {% if '/orders' in request.path %}class="active"{% endif %}><a href='{% url 'orders' %}'>Замовлення</a></li>  
+        <li role='presentation' {% if '/users_list' in request.path %}class="active"{% endif %}><a href='{% url 'users_list' %}'>Список користувачів</a></li>         
        </ul>
       </div>
 

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block meta_title %}{{ user_one.get_full_name|default:user.username }}
+{% endblock meta_title %}
+{% block title %}
+{{ user_one.username }} {% endblock title %} 
+{% block content %}
+<table class="table table-striped">
+<tr>
+<td>Email:</td>
+<td>{{ user_one.email }}</td>
+</tr>
+<tr>
+<td>Username:</td>
+<td>{{ user_one.username }}</td>
+</tr>
+<tr>
+<td>Joined:</td>
+<td>{{ user_one.date_joined }}</td>
+</tr>
+<tr>
+<td>name:</td>
+<td>{{ user_one.first_name }}</td>
+</tr>
+<tr>
+<td>surname:</td>
+<td>{{ user_one.last_name }}</td>
+</tr>
+</table>
+{% endblock content %}
