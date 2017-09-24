@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 {% load i18n %}
 {% load static from staticfiles %}
-{% block meta_title %}{% trans "students" %}{% endblock meta_title %}
-{% block title %}Список  користувачів{% endblock title %}
+{% block meta_title %}{% trans "квіти" %}{% endblock meta_title %}
+{% block title %}{% trans "Список  користувачів" %}{% endblock title %}
 {% block content %}
 {% if user.is_authenticated %}
 
@@ -16,10 +16,10 @@
 #
 </th>
 <th>
-нікнейм
+{% trans "нікнейм" %}
 </th>
 <th>
-прізвище
+{% trans "прізвище" %}
 </th>
 <th>
 id

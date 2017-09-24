@@ -5,9 +5,9 @@
 <html lang='uk'>
   <head>
   	<meta charset='UTF-8'/>
-    <title>Квітка</title>
+    <title>{% trans "Квітка" %}</title>
   	<meta name='description'
-      value='Про квіти' />
+      value={% trans "Про квіти" %} />
       <!-- Include Styles -->
       <link rel='stylesheet' href='https://cdn.jsdelivr.net/bootstrap/3.3.0/css/bootstrap.min.css'>
       <link rel="stylesheet" href='{% static "css/main.css" %}'>
@@ -21,11 +21,8 @@
 
 
    <div class="col-xs-3" id="lang-selector">
-      {% if PK == 'uk' %}
-      <button class='initLangSelector' value='uk'>українська</button>
-      {% else %} 
-      <button class='initLangSelector' value='en'>english</button>
-      {% endif %}
+      <button class='initLangSelector' value='uk'><img src={% static "img/ukraine.png" %}/></button> 
+      <button class='initLangSelector' value='en'><img src={% static "img/united-states.png" %}/></button> 
    </div>
 
 
@@ -33,19 +30,19 @@
      {% if user.is_authenticated %}
         <a href="{% url 'users_one' user.id %}">{{ user.username }}</a>
         |
-        <a href='{% url 'users:auth_logout' %}'>Вийти</a>
+        <a href='{% url 'users:auth_logout' %}'>{% trans "Вийти" %}</a>
      {% else %}
-        <a href='{% url 'users:auth_login' %}'>Ввійти</a>
+        <a href='{% url 'users:auth_login' %}'>{% trans "Ввійти" %}</a>
         |
-        <a href='{% url "users:registration_register" %}'>Зареєструватися</a>
+        <a href='{% url "users:registration_register" %}'>{% trans "Зареєструватися" %}</a>
      {% endif %}
    </div>
 
     <div class='col-xs-3 form-search'>
-     <form action="" method="post">
+     <form action="{% url "search" %}" method="post">
         {% csrf_token %}
       <input type="text" name="search" class="input-medium search-query">
-      <button type="submit" class="btn">Знайти</button>
+      <button type="submit" class="btn">{% trans "Знайти" %}</button>
       <span class="help-block"></span>
      </form>
     </div>
@@ -57,7 +54,7 @@
   	<!-- Logo -->
   	<div class="row">
     <div class='col-xs-6 col-xs-offset-3'>
-      <h1 id='title'>Купівля насіння та саджанців квітів</h1>
+      <h1 id='title'>{% trans "Купівля насіння та саджанців квітів" %}</h1>
 
 
     </div>
@@ -69,10 +66,10 @@
       <div class='col-xs-11'>
        <ul class='nav nav-pills main_menu' role='tablist'>
         <li role='presentation' {% if request.path == '/' %}class="active"{% endif %}><a href='{% url 'main' %}'>{% trans "Головна" %}</a></li>
-        <li role='presentation'><a href=''>Про мене</a></li>
-        <li role='presentation'><a href=''>Контакти</a></li>
-        <li role='presentation' {% if '/basket' in request.path %}class="active"{% endif %}><a href='{% url 'basket' %}'>Кошик</a></li> 
-        <li role='presentation' {% if '/samovlenya' in request.path %}class="active"{% endif %}><a href='{% url 'orders' %}'>Замовлення</a></li> <li role='presentation' {% if '/users_list' in request.path %}class="active"{% endif %}><a href='{% url 'users_list' %}'>Список користувачів</a></li>         
+        <li role='presentation'><a href=''>{% trans "Про мене" %}</a></li>
+        <li role='presentation'><a href=''>{% trans "Контакти" %}</a></li>
+        <li role='presentation' {% if '/basket' in request.path %}class="active"{% endif %}><a href='{% url 'basket' %}'>{%trans "Кошик" %}</a></li> 
+        <li role='presentation' {% if '/samovlenya' in request.path %}class="active"{% endif %}><a href='{% url 'orders' %}'>{% trans "Замовлення" %}</a></li> <li role='presentation' {% if '/users_list' in request.path %}class="active"{% endif %}><a href='{% url 'users_list' %}'>{% trans "Список користувачів" %}</a></li>         
        </ul>
       </div>
 

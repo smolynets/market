@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load i18n %}
 {% block title %}
   
 {% endblock %}
@@ -7,17 +7,17 @@
 {% block content %}
 {% if cart %}
 
-<h2 id='basket_title'>В кошику</h2>
+<h2 id='basket_title'>{% trans "В кошику" %}</h2>
 
   <div class='row col-xs-8 col-xs-offset-2'>
  <table class="table">
 
   <thead>
    <tr>
-    <th>Назва</th>
-    <th>Кількість</th>
-    <th>Ціна</th>
-    <th>Повна ціна</th>
+    <th>{% trans "Назва" %}</th>
+    <th>{% trans "Кількість" %}</th>
+    <th>{% trans "Ціна" %}</th>
+    <th>{% trans "Повна ціна" %}</th>
    </tr>
   </thead>
 
@@ -31,18 +31,18 @@
         {{ item.update_quantity_form.quantity }}
         {{ item.update_quantity_form.update }}
         {% csrf_token %}
-    <input type="submit" value="Обновити">
+    <input type="submit" value="{% trans "Обновити" %}">
       </form>
    </td>
-   <td>{{ item.price }} грн</td>
-   <th>{{ item.total_price }}грн</th>
+   <td>{{ item.price }} {% trans "грн" %}</td>
+   <th>{{ item.total_price }}{% trans "грн" %}</th>
    <td>
-   <a href="{% url "CartRemove" flower.id %}">Видалити
+   <a href="{% url "CartRemove" flower.id %}">{% trans "Видалити" %}
   </td>
    </tr>
   {% endwith %}
       {% endfor %}
-      <td class="num">Загальна сума {{ cart.get_total_price }} грн.</td>
+      <td class="num">{% trans "Загальна сума" %} {{ cart.get_total_price }} {% trans "грн" %}.</td>
   </tbody>
  </table>
  </div>
@@ -51,14 +51,14 @@
 
  
 <div id='basket_button' class='row col-xs-8 col-xs-offset-2'>
- <a href='{% url 'main' %}' class="btn btn-primary">повернутись</a>
- <a href="{% url "OrderCreate" %}" class="btn btn-primary">замовити</a>
+ <a href='{% url 'main' %}' class="btn btn-primary">{% trans "повернутись" %}</a>
+ <a href="{% url "OrderCreate" %}" class="btn btn-primary">{% trans "замовити" %}</a>
 </div>
 
 
 {% else %}
  <div>
- <h2 class="col-xs-6 col-xs-offset-3">Ви ще не вибрали жодного товару!</h2>
+ <h2 class="col-xs-6 col-xs-offset-3">{% trans "Ви ще не вибрали жодного товару" %}!</h2>
  </div>
 
  {% endif %}

@@ -1,6 +1,6 @@
 
 from cart.cart import Cart
-from .utils import get_lang
+#from .utils import get_lang
 
 
 
@@ -14,8 +14,8 @@ def cart(request):
 
 
 #select language
-def lang_processor(request):
-	return {'PK': get_lang(request)}
+#def lang_processor(request):
+	#return {'PK': get_lang(request)}
 
 
 

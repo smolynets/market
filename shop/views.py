@@ -193,3 +193,17 @@ class FlowerDelete(DeleteView):
 
 
 #################################################################
+
+
+def search(request):
+  errors = {}
+  title = request.POST.get('search', '').strip()
+  if not title:
+    errors['title'] = u"Введіть назву квітки"
+  flw = Flower.objects.filter(title=title)
+  if title:
+    return render(request, 'shop/one_flower.html', {'flower':flw,
+        'errors': errors })
+  else:
+    return render(request, 'shop/no_one_flower.html', {})
+

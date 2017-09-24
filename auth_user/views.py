@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.contrib.auth.models import User
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
@@ -6,6 +7,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from datetime import datetime
 from django.contrib import messages
 from PIL import Image
+from django.utils.translation import ugettext as _
 
 
 
@@ -51,25 +53,25 @@ def user_one_edit(request, pk):
 
         username = request.POST.get('username', '').strip()
         if not username:
-          errors['username'] = _(u"Name is mandatory.")
+          errors['username'] = _(u"імя є обовязковим.")
         else:
           data.username = username
 
         password = request.POST.get('password', '').strip()
         if not password:
-          errors['password'] = _(u"Name is mandatory.")
+          errors['password'] = _(u"пароль є обовязковим.")
         else:
           data.password = password
 
         email = request.POST.get('email', '').strip()
         if not email:
-          errors['email'] = "Name is mandatory."
+          errors['email'] = "пошта є обовязковою."
         else:
           data.email = email
 
         lang = request.POST.get('lang', '').strip()
         if not lang:
-          errors['lang'] = "Language is mandatory"
+          errors['lang'] = "мова є обовязковою"
         else:
           ln.stprofile.lang = lang
 
@@ -79,14 +81,14 @@ def user_one_edit(request, pk):
           data.save()
           ln.stprofile.save()
           print ln
-          return HttpResponseRedirect( u'%s?status_message=%s'  % (reverse('users_list'), _(u'User edited succefully')))
+          return HttpResponseRedirect( u'%s?status_message=%s'  % (reverse('users_list'), _(u'користувач успішно відредагований')))
         else:
           # render form with errors and previous user input
           return render(request, 'user_edit.html',
           {'pk': pk,'errors': errors})
       elif request.POST.get('cancel_button') is not None:
         # redirect to home page on cancel button
-        return HttpResponseRedirect( u'%s?status_message=%s' % (reverse('users_list'), _('Editing user canceled')))
+        return HttpResponseRedirect( u'%s?status_message=%s' % (reverse('users_list'), _('редагування користувача відмінено')))
     else:
      # initial form render
      return render(request, 'user_one_edit.html',
@@ -113,7 +115,7 @@ def user_e(request, pk):
 
         lang = request.POST.get('lang', '').strip()
         if not lang:
-          errors['lang'] = _(u"Language is mandatory")
+          errors['lang'] = _(u"мова є обовязковою")
         else:
           ln.stprofile.lang = lang
 
@@ -122,14 +124,14 @@ def user_e(request, pk):
           
           ln.stprofile.save()
           print ln
-          return HttpResponseRedirect( u'%s?status_message=%s'  % (reverse('users_list'), _(u'User edited succefully')))
+          return HttpResponseRedirect( u'%s?status_message=%s'  % (reverse('users_list'), _(u'користувач успішно відредагований')))
         else:
           # render form with errors and previous user input
           return render(request, 'user_edit.html',
           {'pk': pk,'errors': errors})
       elif request.POST.get('cancel_button') is not None:
         # redirect to home page on cancel button
-        return HttpResponseRedirect( u'%s?status_message=%s' % (reverse('users_list'), _('Editing user canceled')))
+        return HttpResponseRedirect( u'%s?status_message=%s' % (reverse('users_list'), _('редагування користувача відмінено')))
     else:
      # initial form render
      return render(request, 'user_one_edit.html',

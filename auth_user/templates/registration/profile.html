@@ -9,36 +9,36 @@
 <table class="table table-striped">
 {% if user.email %}
 <tr>
-<td>{% trans "Email" %}:</td>
+<td>{% trans "Електрона пошта" %}:</td>
 <td>{{ user.email }}</td>
 </tr>
 {% endif %}
 {% if user.username %}
 <tr>
-<td>{% trans "Username" %}:</td>
+<td>{% trans "Імя користувача" %}:</td>
 <td>{{ user.username }}</td>
 </tr>
 {% endif %}
 {% if user.date_joined %}
 <tr>
-<td>{% trans "Joined" %}:</td>
+<td>{% trans "приєднався" %}:</td>
 <td>{{ user.date_joined }}</td>
 </tr>
 {% endif %}
 {% if user.first_name %}
 <tr>
-<td>{% trans "name" %}:</td>
+<td>{% trans "імя" %}:</td>
 <td>{{ user.first_name }}</td>
 </tr>
 {% endif %}
 {% if user.last_name %}
 <tr>
-<td>{% trans "surname" %}:</td>
+<td>{% trans "прізвище" %}:</td>
 <td>{{ user.last_name }}</td>
 </tr>
 {% endif %}
 <tr>
-<td>{% trans "language" %}:</td>
+<td>{% trans "мова" %}:</td>
 <td>{{ user.stprofile.mobile_phone }}</td>
 </tr>
 </table>

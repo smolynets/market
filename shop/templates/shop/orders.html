@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% load static from staticfiles %}
 
 
 
-<title>{% block title %}Купівля насіння та саджанців квітів{% endblock title %}</title>
+<title>{% block title %}{% trans "Купівля насіння та саджанців квітів" %}{% endblock title %}</title>
 
     {% block content %}
     
@@ -17,16 +18,16 @@
   #
  </th>
  <th>
-  імя
+  {% trans "імя" %}
  </th>
  <th>
-  телефон
+  {% trans "телефон" %}
  </th>
  <th>
-  сума
+  {% trans "сума" %}
  </th>
  <th>
-  додаткові нотатки
+  {% trans "додаткові нотатки" %}
  </th>
  </tr>
  </thead>
