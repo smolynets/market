@@ -43,7 +43,7 @@
         {% csrf_token %}
       <input type="text" name="search" class="input-medium search-query">
       <button type="submit" class="btn">{% trans "Знайти" %}</button>
-      <span class="help-block"></span>
+      <span class="help-block">{{ errors.title }}</span>
      </form>
     </div>
 

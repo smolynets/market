@@ -199,9 +199,9 @@ def search(request):
   errors = {}
   title = request.POST.get('search', '').strip()
   if not title:
-    errors['title'] = u"Введіть назву квітки"
+    return render(request, 'shop/no_search.html', {})
   flw = Flower.objects.filter(title=title)
-  if title:
+  if flw:
     return render(request, 'shop/one_flower.html', {'flower':flw,
         'errors': errors })
   else:
