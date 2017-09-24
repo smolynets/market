@@ -9,7 +9,7 @@
     
 
       
-<div class='row col-xs-8 col-xs-offset-2'>
+<div class='row col-xs-10 col-xs-offset-1'>
  <table class="table">
 
  <tr>
@@ -25,6 +25,9 @@
  <th>
   сума
  </th>
+ <th>
+  додаткові нотатки
+ </th>
  </tr>
  </thead>
 
@@ -37,6 +40,8 @@
   <td><a href='{% url 'one_order' order.id %}'>{{ order.name }}</a></td>
   <td><a href='{% url 'one_order' order.id %}'>{{ order.number }}</a></td>
   <td><a href='{% url 'one_order' order.id %}'>{{ order.total_cost }}</a></td>
+  <td><a href='{% url 'one_order' order.id %}'>{{ order.notes }}</a></td>
+
 
  </tr>
 {% endfor %}
