@@ -12,3 +12,16 @@ def is_digit(string):
             return None
         except ValueError:
             return None
+
+
+
+def get_lang(request):
+  if request.COOKIES.get('django_language') == 'en':
+     pk = 'english'
+     return pk
+  elif request.COOKIES.get('django_language') == 'uk':
+     pk = u'українська'
+     return pk
+  else:
+     pk = u'українська'
+     return pk
