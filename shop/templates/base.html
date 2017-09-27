@@ -69,7 +69,8 @@
         <li role='presentation'><a href=''>{% trans "Про мене" %}</a></li>
         <li role='presentation'><a href=''>{% trans "Контакти" %}</a></li>
         <li role='presentation' {% if '/basket' in request.path %}class="active"{% endif %}><a href='{% url 'basket' %}'>{%trans "Кошик" %}</a></li> 
-        <li role='presentation' {% if '/samovlenya' in request.path %}class="active"{% endif %}><a href='{% url 'orders' %}'>{% trans "Замовлення" %}</a></li> <li role='presentation' {% if '/users_list' in request.path %}class="active"{% endif %}><a href='{% url 'users_list' %}'>{% trans "Список користувачів" %}</a></li>         
+        <li role='presentation' {% if '/samovlenya' in request.path %}class="active"{% endif %}><a href='{% url 'orders' %}'>{% trans "Замовлення" %}</a></li> <li role='presentation' {% if '/users_list' in request.path %}class="active"{% endif %}><a href='{% url 'users_list' %}'>{% trans "Список користувачів" %}</a></li> 
+        <li role="presentation" {% if '/logs' in request.path %}class="active"{% endif %}><a href="{% url "logs" %}">{% trans "log journal" %}</a></li>        
        </ul>
       </div>
 

@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'shop',
     'cart',
     'auth_user',
+    'log',
 ]
 
 MIDDLEWARE = [
@@ -152,3 +153,50 @@ ACCOUNT_ACTIVATION_DAYS = 1
 
 
 USE_I18N = True
+
+
+
+########################
+
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': True,
+    'formatters': {
+      'verbose': {
+        'format': '%(levelname)s %(asctime)s %(module)s: %(message)s'
+      },
+      'simple': {
+        'format': '%(levelname)s: %(message)s'
+      },
+   },
+   'handlers': {
+     'null': {
+       'level': 'DEBUG',
+       'class': 'logging.NullHandler',
+     },
+     'console': {
+       'level': 'INFO',
+       'class': 'logging.StreamHandler',
+       'formatter': 'verbose',
+     },
+     
+     'database': {
+            'level': 'DEBUG',
+            'class': 'shopdb.custom_handlers.DatabaseHandler',
+            'formatter': 'verbose'
+     },
+   },
+   'loggers': {
+     'django': {
+       'handlers': ['null'],
+       'propagate': True,
+       'level': 'INFO',
+     },
+     'shop.signals': {
+     'handlers': ['database'],
+     'level': 'INFO',
+     }
+
+   }
+}

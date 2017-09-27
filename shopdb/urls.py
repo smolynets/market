@@ -21,4 +21,5 @@ urlpatterns = [
     url(r'^', include('shop.urls')),
     url(r'^', include('cart.urls')),
     url(r'^', include('auth_user.urls')),
+    url(r'^', include('log.urls')),
 ]
