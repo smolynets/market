@@ -119,7 +119,7 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
@@ -159,16 +159,19 @@ USE_I18N = True
 ########################
 
 
+#loggers
+LOG_FILE = os.path.join(BASE_DIR, 'shop.log')
+
 LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': True,
-    'formatters': {
-      'verbose': {
-        'format': '%(levelname)s %(asctime)s %(module)s: %(message)s'
-      },
-      'simple': {
-        'format': '%(levelname)s: %(message)s'
-      },
+	'version': 1,
+	'disable_existing_loggers': True,
+	'formatters': {
+	'verbose': {
+	  'format': '%(levelname)s %(asctime)s %(module)s: %(message)s'
+	  },
+	  'simple': {
+	    'format': '%(levelname)s: %(message)s'
+	  },
    },
    'handlers': {
      'null': {
@@ -180,7 +183,12 @@ LOGGING = {
        'class': 'logging.StreamHandler',
        'formatter': 'verbose',
      },
-     
+     'file': {
+     'level': 'INFO',
+     'class': 'logging.FileHandler',
+     'filename': LOG_FILE,
+     'formatter': 'verbose'
+     },
      'database': {
             'level': 'DEBUG',
             'class': 'shopdb.custom_handlers.DatabaseHandler',
@@ -194,7 +202,7 @@ LOGGING = {
        'level': 'INFO',
      },
      'shop.signals': {
-     'handlers': ['database'],
+     'handlers': ['file','console', 'database'],
      'level': 'INFO',
      }
 

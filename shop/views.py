@@ -14,7 +14,7 @@ from django.views.generic import DeleteView
 
 ###########################################################################
 def main_page(request):
-  flowers = Flower.objects.all()
+  flowers = Flower.objects.get_queryset().order_by('id')
   # try to order flowers list
   order_by = request.GET.get('order_by', '')
   if order_by in ('price', '#'):

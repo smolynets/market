@@ -11,18 +11,18 @@ def log_flower_updated_added_event(sender, **kwargs):
 	logger = logging.getLogger(__name__)
 	flower = kwargs['instance']
 	if kwargs['created']:
-		logger.info("Flower added: %s %s (ID: %d)", flower.title, 
+		logger.info("Flower added: %s (ID: %d)", flower.title, 
 		 flower.id)
 	else:
-		logger.info("Flower updated: %s %s (ID: %d)", flower.title, 
+		logger.info("Flower updated: %s (ID: %d)", flower.title, 
 	     flower.id)
-	print sender
+
 
 @receiver(post_delete, sender=Flower)
 def log_flower_deleted_event(sender, **kwargs):
 	logger = logging.getLogger(__name__)
 	flower = kwargs['instance']
-	logger.info("Flower deleted: %s %s (ID: %d)", flower.title,
+	logger.info("Flower deleted: %s (ID: %d)", flower.title,
          flower.id)
 
 
