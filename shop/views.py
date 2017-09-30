@@ -78,6 +78,7 @@ def flower_add(request):
       photo_big = request.FILES.get('photo_big')
       if photo_big:
         data['photo_big'] = photo_big 
+      data['user'] = request.user
 
            
       # save flovwer

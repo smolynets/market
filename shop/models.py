@@ -23,5 +23,8 @@ class Flower(models.Model):
 	photo_big = models.ImageField(
       blank=True,
       null=True)
+	user = models.CharField(
+      max_length=256,
+      blank=False)
 	def __unicode__(self):
 		return u'%s' % (self.title)
