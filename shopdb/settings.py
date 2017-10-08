@@ -81,12 +81,7 @@ WSGI_APPLICATION = 'shopdb.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, '..', 'db.sqlite3'),
-    }
-}
+from ext_settings import *
 
 
 # Password validation
@@ -134,19 +129,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, '..', 'media')
 CART_SESSION_ID = 'cart'
 
 REGISTRATION_OPEN = True
-
-
-
-
-# email settings
-ADMIN_EMAIL = 'shopdb.com'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = '465'
-EMAIL_HOST_USER = 'smolynets1@gmail.com'
-EMAIL_HOST_PASSWORD = 'dobrosyno'
-EMAIL_USE_TLS = False
-EMAIL_USE_SSL = True
-
 
 
 ACCOUNT_ACTIVATION_DAYS = 1
