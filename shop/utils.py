@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from .models import Flower
+from cart.cart import Cart
 
 
 

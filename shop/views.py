@@ -5,6 +5,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import Flower
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .utils import is_digit
+from cart.cart import Cart
 from django.http import HttpResponse, HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.views.generic import DeleteView
@@ -30,7 +31,14 @@ def main_page(request):
     flowers = paginator.page(1)
   except EmptyPage:
     flowers= paginator.page(paginator.num_pages)
-  return render(request, 'shop/main.html', {'flowers':flowers})
+  #cart indicator(main page)
+  list = []
+  cart = Cart(request) 
+  for item in cart:
+    list.append(item['flower'])
+  cart_main = list 
+  return render(request, 'shop/main.html', {'flowers':flowers,
+    'cart_main':cart_main})
 
 
 

@@ -28,15 +28,27 @@
     <div class='row col-xs-10 col-xs-offset-1 content'>
 
         {% for fl in flowers %}
-             <div class="col-xs-3 lot">
+             <div class="col-md-3 lot">
                 <div class="thumbnail">
+                
                     <img src="{{ fl.photo_main.url }}" alt="">
-                    <div class="title_lot"><h4>{{ fl.title }}</h4></div>
+                    <div class="title_lot">
+                      s<h4>{{ fl.title }}</h4>
+                    </div>
                     <div class="caption"></div>
-                    <div id='price_buy'>{% trans "ціна" %} {{ fl.price }} {% trans "грн" %}</div>
+                    <div id='price_buy'>{% trans "ціна" %} 
+                    {{ fl.price }} {% trans "грн" %}</div>
+    
+                    {% if fl in cart_main %}
+                    <div>
+                      <a href='{% url 'CartRemove_main_page' fl.id %}' class="btn btn-primary to_basket">{% trans "Видалити" %}</a>
+                    </div>
+                    {% else %}
                     <div>
                       <a href='{% url 'CartAdd' fl.id %}' class="btn btn-primary to_basket">{% trans "в кошик" %}</a>
-                      </div>
+                    </div>
+                    {% endif %}
+
                     <div id='reade_more'><a href="{% url "one_flower" fl.id %}">{% trans "Читати більше..." %}</a></div>
                 </div>
             </div>

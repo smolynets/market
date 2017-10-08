@@ -26,7 +26,8 @@ def basket(request):
     for item in cart:
         item['update_quantity_form'] = CartAddProductForm(
                                         initial={
-                                            'quantity': item['quantity'],
+                                            'quantity': item
+                                               ['quantity'],
                                             'update': True
                                         })
     return render(request, 'shop/basket.html', {'cart': cart})
@@ -51,6 +52,18 @@ def CartRemove(request, flower_id):
     flower = get_object_or_404(Flower, id=flower_id)
     cart.remove(flower)
     return redirect('basket')
+
+
+
+
+
+#########################################################################
+
+def CartRemove_main_page(request, flower_id):
+    cart = Cart(request)
+    flower = get_object_or_404(Flower, id=flower_id)
+    cart.remove(flower)
+    return redirect('main')
 
 
 #############################################################################
