@@ -41,7 +41,7 @@
     
                     {% if fl in cart_main %}
                     <div>
-                      <a href='{% url 'CartRemove_main_page' fl.id %}' class="btn btn-primary to_basket">{% trans "Видалити" %}</a>
+                      <a href='{% url 'CartRemove_main_page' fl.id %}' class="btn btn-primary from_basket"><font color="black">{% trans "З кошика" %}</a>
                     </div>
                     {% else %}
                     <div>

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-24 15:52+0000\n"
+"POT-Creation-Date: 2017-10-09 08:34+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -72,6 +72,10 @@ msgstr ""
 msgid "Список користувачів"
 msgstr ""
 
+#: templates/base.html:73
+msgid "Журнал змін"
+msgstr ""
+
 #: templates/shop/basket.html:10
 msgid "В кошику"
 msgstr ""
@@ -99,7 +103,7 @@ msgid "Обновити"
 msgstr ""
 
 #: templates/shop/basket.html:37 templates/shop/basket.html:38
-#: templates/shop/basket.html:45 templates/shop/main.html:36
+#: templates/shop/basket.html:45 templates/shop/main.html:40
 msgid "грн"
 msgstr ""
 
@@ -199,15 +203,19 @@ msgstr ""
 msgid "додати квітку"
 msgstr ""
 
-#: templates/shop/main.html:36
+#: templates/shop/main.html:39
 msgid "ціна"
 msgstr ""
 
-#: templates/shop/main.html:38
+#: templates/shop/main.html:44
+msgid "З кошика"
+msgstr ""
+
+#: templates/shop/main.html:48
 msgid "в кошик"
 msgstr ""
 
-#: templates/shop/main.html:40
+#: templates/shop/main.html:52
 msgid "Читати більше..."
 msgstr ""
 

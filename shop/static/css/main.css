@@ -94,6 +94,11 @@ footer {
 	margin-top: 35px;
 }
 
+.from_basket{
+	margin-top: 35px;
+	background-color: #FFF5EE;
+}
+
 #reade_more{
 	margin-top: 20px;
 }
@@ -132,3 +137,5 @@ footer {
 #basket_title{
 	text-align: center;
 }
+
+
