@@ -23,7 +23,7 @@
       {% endif %}
         </center>
       </div>
-      {% if user.is_authenticated %}
+      {% if perms.auth.add_user %}
       <div class="reg_del_button">
     <a class='btn btn-primary' href='{% url 'flower_edit' fl.id %}'>{% trans "редагувати" %}</a>
     <a class='btn btn-primary' id='del_buttom' href='{% url 'flower_del' fl.id %}'>{% trans "видалити" %}</a>

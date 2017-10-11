@@ -23,7 +23,9 @@
        {% endwith %}
     </div>
 
+    {% if perms.auth.add_user %}
     <a class='btn btn-primary btn1' href='{% url "flower_add" %}'>{% trans "додати квітку" %}</a>
+    {% endif %}
 
     <div class='row col-xs-10 col-xs-offset-1 content'>
 
@@ -31,7 +33,8 @@
              <div class="col-md-3 lot">
                 <div class="thumbnail">
                 
-                    <img src="{{ fl.photo_main.url }}" alt="">
+                    <img height="800" width="800" 
+                    src="{{ fl.photo_main.url }}" alt="">
                     <div class="title_lot">
                       s<h4>{{ fl.title }}</h4>
                     </div>
