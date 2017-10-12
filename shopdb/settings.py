@@ -27,7 +27,6 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['176.9.99.15', 'kvitky.pp.ua']
 
-
 # Application definition
 
 INSTALLED_APPS = [
