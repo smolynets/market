@@ -12,8 +12,10 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 import os
 
+from ext_settings import *
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+#BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # Quick-start development settings - unsuitable for production
@@ -23,9 +25,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '#(r-v08e2resceo+p5a38g6cinbnev=)5&w1mxgz1_gec3xtx('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+#DEBUG = False
 
-ALLOWED_HOSTS = ['176.9.99.15', 'kvitky.pp.ua']
+#ALLOWED_HOSTS = ['176.9.99.15', 'kvitky.pp.ua']
 
 # Application definition
 
@@ -77,10 +79,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'shopdb.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/1.11/ref/settings/#databases
-
-from ext_settings import *
 
 
 # Password validation
