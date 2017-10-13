@@ -139,7 +139,6 @@ USE_I18N = True
 
 
 #loggers
-LOG_FILE = os.path.join(BASE_DIR, 'shop.log')
 
 LOGGING = {
 	'version': 1,
@@ -162,12 +161,6 @@ LOGGING = {
        'class': 'logging.StreamHandler',
        'formatter': 'verbose',
      },
-     'file': {
-     'level': 'INFO',
-     'class': 'logging.FileHandler',
-     'filename': LOG_FILE,
-     'formatter': 'verbose'
-     },
      'database': {
             'level': 'DEBUG',
             'class': 'shopdb.custom_handlers.DatabaseHandler',
@@ -181,7 +174,7 @@ LOGGING = {
        'level': 'INFO',
      },
      'shop.signals': {
-     'handlers': ['file','console', 'database'],
+     'handlers': ['console', 'database'],
      'level': 'INFO',
      }
 
