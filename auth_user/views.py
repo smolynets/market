@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+from __future__ import print_function
+
 from django.contrib.auth.models import User
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
@@ -80,7 +82,7 @@ def user_one_edit(request, pk):
           
           data.save()
           ln.stprofile.save()
-          print ln
+          print(ln)
           return HttpResponseRedirect( u'%s?status_message=%s'  % (reverse('users_list'), _(u'користувач успішно відредагований')))
         else:
           # render form with errors and previous user input
@@ -108,7 +110,7 @@ def user_e(request, pk):
     
     if request.method == "POST":
       ln = User.objects.get(pk=pk)
-      print ln
+      print(ln)
       if request.POST.get('add_button') is not None:
 
         errors = {}
@@ -123,7 +125,7 @@ def user_e(request, pk):
         if not errors:
           
           ln.stprofile.save()
-          print ln
+          print(ln)
           return HttpResponseRedirect( u'%s?status_message=%s'  % (reverse('users_list'), _(u'користувач успішно відредагований')))
         else:
           # render form with errors and previous user input

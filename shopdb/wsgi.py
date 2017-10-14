@@ -12,7 +12,8 @@ import sys
 
 root = os.path.join(os.path.dirname(__file__), '..')
 sys.path.insert(0, root)
-packages = '/var/www/.virtualenvs/oleh/lib/python2.7/site-packages'
+# packages = '/var/www/.virtualenvs/oleh/lib/python2.7/site-packages'
+packages = '/var/www/.virtualenvs/oleh/lib/python3.4/site-packages'
 sys.path.insert(0, packages)
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "shopdb.settings")

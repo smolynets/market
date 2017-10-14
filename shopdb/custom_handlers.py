@@ -20,4 +20,4 @@ class DatabaseHandler(logging.Handler):
                                 message=record.message)
             logentry.save()
         except Exception as e:
-            print e
+            print(e)
