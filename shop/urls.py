@@ -14,7 +14,7 @@ urlpatterns = [
     url(r'^dodaty_kvitku', views.flower_add, name='flower_add'),
     url(r'^flower/(?P<pk>\d+)/one/', views.one_flower, 
     	name='one_flower'),
-    url(r'^redahuvaty/(?P<pk>\d+)/kvitku', views.flower_edit,
+    url(r'^http://kvitky.pp.ua/redahuvaty/(?P<pk>\d+)/kvitku', views.flower_edit,
     	name='flower_edit'),
     url(r'^vydalyty/(?P<pk>\d+)/kvitku', FlowerDelete.as_view(),
         name='flower_del'),
