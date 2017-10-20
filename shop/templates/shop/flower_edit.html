@@ -15,7 +15,7 @@
 
 
 
-<div class="row">
+<div class="row custom_form">
 <form action="{% url "flower_edit" pk %}" method="post"
 enctype="multipart/form-data" role="form" class="form-horizontal col-xs-6 col-xs-offset-3">
 {% csrf_token %}
@@ -80,13 +80,14 @@ enctype="multipart/form-data" role="form" class="form-horizontal col-xs-6 col-xs
     class="btn btn-link">{% trans "Скасувати" %}</button>
   </div>
   </div>
+  <div class="row col-xs-8 col-xs-offset-2">
+    <p>{% trans "Поля, позначені  зірочкою,  обовязкові  для  заповнення" %}!</p>
+  </div>
 </form>
 </div>
 
 
 
-  <div class="row col-xs-6 col-xs-offset-3">
-    <p>{% trans "Поля, позначені  зірочкою,  обовязкові  для  заповнення" %}!</p>
-  </div>
+  
 </div>
 {% endblock content %}
