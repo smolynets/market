@@ -1,38 +1,28 @@
+{% extends 'base.html' %}
 {% load static from staticfiles %}
 {% load i18n %}
-<!DOCTYPE html>
-<html lang='uk'>
-  <head>
-    <meta charset='UTF-8'/>
-    <title>{% trans "Квітка" %}</title>
-    <meta name='description'
-      value='{% trans "Про квіти" %}' />
-      <!-- Include Styles -->
-      <link rel='stylesheet' href='https://cdn.jsdelivr.net/bootstrap/3.3.0/css/bootstrap.min.css'>
-      <link rel="stylesheet" href='{% static 'css/my.css' %}'>
-      </head>
 
-      <body>
-      <div>
-<form action="{% url "users:auth_login" %}" method="post" id="log_form">
-{% csrf_token %}
-<h1 id='login_title'>{% trans "Вхід" %}</h1>
-<input type="hidden" name="next" value="{% url "main" %}" />
-<div class="form-group">
-<label for="login">{% trans "Логін" %}</label>
-<input type="text" class="form-control" id="login" value=""
-name="username"/>
-<span class="help-block">{{ form.errors.username }}</span>
-</div>
-<div class="form-group">
-<label for="password">{% trans "Пароль" %}</label>
-<input type="password" class="form-control" id="password" value=""
-name="password" />
-<span class="help-block">{{ form.errors.username }}</span>
-</div>
-<button type="submit" class="btn btn-primary" id="log_button">{% trans "Ввійти" %}</button>
-</form>
-</div>
-</body>
-</html>
+{% block content %}
+
+  <div class="col-xs-4 col-xs-offset-4 log1">
+  <form action="{% url "users:auth_login" %}" method="post">
+    {% csrf_token %}
+    <h1 id='login_title'>{% trans "Вхід" %}</h1>
+    <input type="hidden" name="next" value="{% url "main" %}" />
+    <div class="form-group">
+      <label for="login">{% trans "Логін" %}</label>
+      <input type="text" class="form-control" value=""
+      name="username"/>
+      <span class="help-block">{{ form.errors.username }}</span>
+    </div>
+    <div class="form-group">
+      <label for="password">{% trans "Пароль" %}</label>
+      <input type="password" class="form-control" 
+      value="" name="password" />
+      <span class="help-block">{{ form.errors.username }}</span>
+    </div>
+    <button type="submit" class="btn btn-primary">{% trans "Ввійти" %}</button>
+  </form>
+  </div>
+{% endblock content %}
 
