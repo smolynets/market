@@ -139,7 +139,8 @@ def orders(request):
 def one_order(request, pk):
   order = Order.objects.get(pk=pk)
   products = OrderItem.objects.filter(order=order)
-  return render(request, 'shop/one_order.html', {'order':order, 'products': products})
+  return render(request, 'shop/one_order.html', {'order':order, 
+    'products': products})
 
 
 
