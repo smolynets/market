@@ -27,34 +27,31 @@
     <a class='btn btn-primary btn1' href='{% url "flower_add" %}'>{% trans "додати квітку" %}</a>
     {% endif %}
 
-    <div class='row col-xs-10 col-xs-offset-1 content'>
+    <div class='row col-xs-11 col-xs-offset-1 content'>
 
         {% for fl in flowers %}
-             <div class="col-md-3 lot">
-                <div class="thumbnail">
-                
-                    <img height="800" width="800" 
-                    src="{{ fl.photo_main.url }}" alt="">
-                    <div class="title_lot">
-                      <h4>{{ fl.title }}</h4>
-                    </div>
-                    <div class="caption"></div>
-                    <div id='price_buy'>{% trans "ціна" %} 
-                    {{ fl.price }} {% trans "грн" %}</div>
-    
-                    {% if fl in cart_main %}
-                    <div>
-                      <a href='{% url 'CartRemove_main_page' fl.id %}' class="btn btn-primary from_basket"><font color="black">{% trans "З кошика" %}</a>
-                    </div>
-                    {% else %}
-                    <div>
-                      <a href='{% url 'CartAdd' fl.id %}' class="btn btn-primary to_basket">{% trans "в кошик" %}</a>
-                    </div>
-                    {% endif %}
-
-                    <div id='reade_more'><a href="{% url "one_flower" fl.id %}">{% trans "Читати більше..." %}</a></div>
-                </div>
+          
+    <div class="col-xs-3 lot">
+            <div class="thumbnail">
+            <img  src="{{ fl.photo_main.url }}"/>
+            <div class="title_lot"><h4>{{ fl.title }}</h4></div>
+            <div class="caption">
+            <div id='price_buy'>{% trans "ціна" %} 
+                  {{ fl.price }} {% trans "грн" %}</div>
+            {% if fl in cart_main %}
+              <div><a href='{% url 'CartRemove_main_page' fl.id %}'
+                class="btn btn-primary from_basket"><font color="black">{% trans "З кошика" %}</a>
+              </div>
+              {% else %}
+              <div><a href='{% url 'CartAdd' fl.id %}' 
+                class="btn btn-primary to_basket">{% trans "в кошик" %}</a>
+              </div>
+              {% endif %}
+            <div id='reade_more'><a href="{% url "one_flower" fl.id %}">Читати більше...</a></div>
             </div>
+            </div>
+        </div>
+        
         {% endfor %}
     </div>
 
