@@ -9,7 +9,7 @@
     
 
  <div class='row col-xs-8 col-xs-offset-2'>
- <table class="table">
+ <table class="table table-hover table-striped">
   <tbody>
   <tr>
   <td>{% trans "імя" %}</td>
@@ -24,8 +24,19 @@
   <td>{{ order.notes }}</td>
   </tr>
   </tbody>
+
   </table>
-<table>
+<table class="table table-hover table-striped">
+<thead>
+  <tr>
+    <th>
+      Назва
+    </th>
+    <th>
+      Кількість
+    </th>
+   </tr>
+  </thead>
 <tbody>
   {% for item in products %}
   <tr>
@@ -39,8 +50,10 @@
   {% endfor %}
   </tbody>
   </table>
+  Загальна сума замовлення{{ order.total_cost }}
   </div>
  </div>
+
 
 
 
