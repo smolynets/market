@@ -197,22 +197,18 @@ class FlowerDelete(DeleteView):
       return HttpResponseRedirect(u'%s?status_message=Видалення  квітки відмінено!'% reverse('main'))
     else:
       return super(FlowerDelete, self).post(request, *args, **kwargs)
-  def dispatch(self, *args, **kwargs):
-        return super(FlowerDelete, self).dispatch(*args, **kwargs)
 
 
 #################################################################
 
 
 def search(request):
-  errors = {}
   title = request.POST.get('search', '').strip()
   if not title:
     return render(request, 'shop/no_search.html', {})
   flw = Flower.objects.filter(title=title)
   if flw:
-    return render(request, 'shop/one_flower.html', {'flower':flw,
-        'errors': errors })
+    return render(request, 'shop/one_flower.html', {'flower':flw })
   else:
     return render(request, 'shop/no_one_flower.html', {})
 
