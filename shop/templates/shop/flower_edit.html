@@ -65,6 +65,9 @@ enctype="multipart/form-data" role="form" class="form-horizontal col-xs-6 col-xs
 <div class="form-group {% if errors.photo_big %}has-error{% endif %}">
     <label for="photo_big"class="col-sm-2 control-label">{% trans "Фото" %} 2</label>
     <div class="col-sm-10">
+
+    <p class="file-upload">{% trans "Поточна фотографія" %}: <a href="/media/{{flower.photo_main}}">{{ flower.photo_main }}</a></span><br />
+    
       <input type="file" value="" name="photo_big" id="photo_big"
              class="form-control" />
       <span class="help-block">{{ errors.photo_big }}</span>
