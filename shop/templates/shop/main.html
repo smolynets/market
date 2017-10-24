@@ -14,7 +14,7 @@
 
     <div class="row col-xs-2 col-xs-offset-5 price_sorting">
        {% with order_by=request.GET.order_by reverse=request.GET.reverse %}
-           <a href="{% url "main" %}?order_by=price{% if order_by == 'price' and reverse != '1' %}&amp;reverse=1{% endif %}">
+           <a href="{% url "main" %}?order_by=price{% if order_by == 'price' and reverse != '1' %};reverse=1{% endif %}">
             {% trans "Сортувати по ціні" %}
            {% if order_by == 'price' and reverse != '1' %}&uarr;
            {% elif order_by == 'price' and reverse == '1' %}&darr;
