@@ -22,9 +22,9 @@
 
    <div class="col-md-3" id="lang-selector">
       <button class='initLangSelector' value='uk'>
-      <img src="http://kvitky.pp.ua/static/img/ukraine.png"/></button> 
+      <img src="http://localhost:8000/static/img/ukraine.png"/></button> 
       <button class='initLangSelector' value='en'>
-      <img src="http://kvitky.pp.ua/static/img/united-states.png"/></button> 
+      <img src="http://localhost:8000/static/img/united-states.png"/></button> 
    </div>
 
 
@@ -78,9 +78,9 @@
       <div class="col-xs-1 cart_indicator">
       {% if cart|length > 0 %}
           <a href='{% url 'basket' %}'><img 
-src="http://kvitky.pp.ua/static/img/cart.png"/></a> {{ cart|length }}
+src="http://localhost:8000/static/img/cart.png"/></a> {{ cart|length }}
       {% else %}
-          <a><img src="http://kvitky.pp.ua/static/img/cart-c.png"/></a>
+          <a><img src="http://localhost:8000/static/img/cart-c.png"/></a>
       {% endif %}
       </div>
 
