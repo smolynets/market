@@ -5,9 +5,9 @@
 <html lang='uk'>
   <head>
   	<meta charset='UTF-8'/>
-    <title>{% trans "Квітка" %}</title>
+    <title>Квітка</title>
   	<meta name='description'
-      value={% trans "Про квіти" %} />
+      value=Квіти/>
       <!-- Include Styles -->
       <link rel='stylesheet' href='https://cdn.jsdelivr.net/bootstrap/3.3.0/css/bootstrap.min.css'>
       <link rel="stylesheet" href='{% static "css/main.css" %}'>
@@ -20,23 +20,15 @@
   <div class="row">
 
 
-   <div class="col-md-3" id="lang-selector">
-      <button class='initLangSelector' value='uk'>
-      <img src="http://localhost:8000/static/img/ukraine.png"/></button> 
-      <button class='initLangSelector' value='en'>
-      <img src="http://localhost:8000/static/img/united-states.png"/></button> 
-   </div>
-
-
    <div class='col-md-3 registration'>
      {% if user.is_authenticated %}
         <a href="{% url 'users_one' user.id %}">{{ user.username }}</a>
         |
-        <a href='{% url 'users:auth_logout' %}'>{% trans "Вийти" %}</a>
+        <a href='{% url 'users:auth_logout' %}'>Вийти</a>
      {% else %}
-        <a href='{% url 'users:auth_login' %}'>{% trans "Ввійти" %}</a>
+        <a href='{% url 'users:auth_login' %}'>Ввійти</a>
         |
-        <a href='{% url "users:registration_register" %}'>{% trans "Зареєструватися" %}</a>
+        <a href='{% url "users:registration_register" %}'>Зареєструватися</a>
      {% endif %}
    </div>
 
