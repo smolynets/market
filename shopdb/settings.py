@@ -136,3 +136,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, '..' 'media')
 
 
 ACCOUNT_ACTIVATION_DAYS = 2
+
+try:
+    from ext_setting import *
+except:
+    pass
