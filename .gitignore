@@ -104,3 +104,8 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+ext_settings
+ext_settings.py
+
+db.sqlite3
